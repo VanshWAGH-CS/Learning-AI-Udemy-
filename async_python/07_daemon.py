@@ -1,6 +1,8 @@
 import threading
 import time
 
+#daemon threads automatically shutdown when main program shut down.
+
 def monitor_tea_temp():
     while True:
         print(f"Monitoring tea temperature...")

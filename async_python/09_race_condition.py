@@ -13,3 +13,7 @@ for t in threads: t.start()
 for t in threads: t.join()
 
 print("Chai stock: ", chai_stock)
+
+#profiling : 
+#python shows time spend on each thead
+#python -m cProfile -s time 09_race_condition.py this is the command

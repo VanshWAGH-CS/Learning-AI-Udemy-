@@ -9,4 +9,6 @@ def monitor_tea_temp():
 t = threading.Thread(target=monitor_tea_temp)
 t.start()
 
+
+#what is the difference this non demon thread will be keep running
 print("Main program done")
