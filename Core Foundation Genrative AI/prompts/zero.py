@@ -1,3 +1,4 @@
+# zero shot prompting
 from openai import OpenAI
 from dotenv import load_dotenv
 import os
@@ -9,6 +10,8 @@ client = OpenAI(
     base_url="https://generativelanguage.googleapis.com/v1beta/"
 )
 
+SYSTEM_PROMPT = "You are a helpful assistant who only answers Maths questions. If the query is not related to maths just say sorry and move on."
+
 # Method 2: Alternative - use google-generativeai library (more direct)
 # import google.generativeai as genai
 # genai.configure(api_key="YOUR_GEMINI_API_KEY_HERE")
@@ -17,7 +20,7 @@ try:
     response = client.chat.completions.create(
         model="gemini-1.5-flash",
         messages=[
-            {"role": "system", "content": "You are a helpful assistant who only answers Maths questions. If the query is not related to maths just say sorry and move on."},
+            {"role": "system", "content": SYSTEM_PROMPT},
             {
                 "role": "user", 
                 "content": "Explain to me how AI works"
